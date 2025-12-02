@@ -19,22 +19,29 @@ graph TD
 ```
 
 ## 2. Technology Description
-- **Frontend**: React@18 + tailwindcss@3 + vite
-- **Initialization Tool**: vite-init
-- **Backend**: None (GitHub Pages static hosting)
-- **Audio**: Web Audio API for musical tone generation
-- **Storage**: Browser Local Storage for progress persistence
+
+* **Frontend**: React\@18 + tailwindcss\@3 + vite
+
+* **Initialization Tool**: vite-init
+
+* **Backend**: None (GitHub Pages static hosting)
+
+* **Audio**: Web Audio API for musical tone generation
+
+* **Storage**: Browser Local Storage for progress persistence
 
 ## 3. Route Definitions
-| Route | Purpose |
-|-------|---------|
-| / | Game page - main gameplay interface |
-| /instructions | Instructions page - game rules and tutorial |
+
+| Route         | Purpose                                         |
+| ------------- | ----------------------------------------------- |
+| /             | Game page - main gameplay interface             |
+| /instructions | Instructions page - game rules and tutorial     |
 | /achievements | Achievements page - badges and unlocked content |
 
 ## 4. Core Components
 
 ### 4.1 Piano Component
+
 ```typescript
 interface PianoKey {
   note: string;
@@ -50,6 +57,7 @@ interface PianoProps {
 ```
 
 ### 4.2 Game State Management
+
 ```typescript
 interface GameState {
   currentLevel: 3 | 6 | 8 | 12;
@@ -73,6 +81,7 @@ interface Achievement {
 ```
 
 ### 4.3 Audio Service
+
 ```typescript
 class AudioService {
   private audioContext: AudioContext;
@@ -113,6 +122,7 @@ class AudioService {
 ## 5. Local Storage Schema
 
 ### 5.1 Game Progress Storage
+
 ```typescript
 interface StoredGameData {
   highScore: number;
@@ -126,6 +136,7 @@ interface StoredGameData {
 ```
 
 ### 5.2 Achievement Definitions
+
 ```typescript
 const ACHIEVEMENTS: Achievement[] = [
   {
@@ -183,6 +194,7 @@ const ACHIEVEMENTS: Achievement[] = [
 ## 6. Game Logic Implementation
 
 ### 6.1 Sequence Generation
+
 ```typescript
 class SequenceGenerator {
   private notes: string[] = ['C4', 'C#4', 'D4', 'D#4', 'E4', 'F4', 'F#4', 'G4', 'G#4', 'A4', 'A#4', 'B4'];
@@ -202,6 +214,7 @@ class SequenceGenerator {
 ```
 
 ### 6.2 Game Engine
+
 ```typescript
 class GameEngine {
   private gameState: GameState;
@@ -287,6 +300,7 @@ class GameEngine {
 ## 7. Deployment Configuration
 
 ### 7.1 GitHub Pages Setup
+
 ```json
 // package.json scripts
 {
@@ -307,7 +321,12 @@ export default {
 ```
 
 ### 7.2 Build Optimization
-- Code splitting for faster initial load
-- Audio file preloading for reward snippets
-- Service worker for offline capability
-- Image optimization for achievement badges
+
+* Code splitting for faster initial load
+
+* Audio file preloading for reward snippets
+
+* Service worker for offline capability
+
+* Image optimization for achievement badges
+
